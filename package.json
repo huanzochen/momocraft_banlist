@@ -1,0 +1,25 @@
+{
+  "name": "momocraft_banlist",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huanzochen/momocraft_banlist.git"
+  },
+  "author": "tommy_huang",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/huanzochen/momocraft_banlist/issues"
+  },
+  "homepage": "https://github.com/huanzochen/momocraft_banlist#readme",
+  "dependencies": {
+    "apollo-server": "^2.9.4",
+    "graphql": "^14.5.8"
+  }
+}
