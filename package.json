@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev":"nodemon index.js"
+    "build": "babel index.js typeDefs.js -d dist",
+    "start": "npm run build && nodemon dist/index.js",
+    "dev" : "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,10 @@
   "dependencies": {
     "apollo-server": "^2.9.4",
     "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2"
   }
 }
