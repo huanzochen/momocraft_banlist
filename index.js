@@ -51,16 +51,8 @@ const resolvers = {
     author: (parent, args, context) => {
       return findUserById(parent.authorId);
     }
-  },
-  DateTime,
-  EmailAddress
+  }
 };
-
-// Required: Export the GraphQL.js schema object as "schema"
-export const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers,
-});
 
 // Optional: Export a function to get context from the request. It accepts two
 // parameters - headers (lowercased http headers) and secrets (secrets defined
