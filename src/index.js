@@ -1,10 +1,27 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-import { typeDefs } from './typeDefs.js';
-import { generateDatas } from './generateDatas.js';
+import { typeDefs } from './typedefs.js';
+import { generateDatas } from './generatedatas.js';
+import { getBanList } from './models/litebans.js'
 
 
-const datas = generateDatas();
+
+let datas = generateDatas();
+
+let datas2 = getBanList()
+.then(([rows]) => {
+  datas2 = rows;
+})
+.catch(err => console.dir(err));
+console.dir( datas2 );
+
+
+
+//console.log(datas);
+console.log(datas2);
+
+
+
 const findUserById = id => datas.users.find(user => user.id === id);
 const findUserByName = name => datas.users.find(user => user.name === name);
 const filterPostsByAuthorId = authorId => datas.posts.filter(post => post.authorId === authorId);
